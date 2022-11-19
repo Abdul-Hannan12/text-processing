@@ -68,13 +68,13 @@ export default function TextForm(props){
 
             <div className="btns">
 
-            <button onClick={handleUpClick}>Upper Case</button>
-            <button onClick={handleLowClick}>Lower Case</button>
-            <button onClick={handleTitleClick}>Title Case</button>
-            <button onClick={handleAlternateClick}>Alternate Case</button>
-            <button onClick={handleExtraSpaceClick}>Remove Extra Spaces</button>
-            <button onClick={handleCopy}>Copy</button>
-            <button onClick={handleClearClick}>Clear</button>
+            <button className='btn btn1' onClick={handleUpClick}>Upper Case</button>
+            <button className='btn btn2' onClick={handleLowClick}>Lower Case</button>
+            <button className='btn btn3' onClick={handleTitleClick}>Title Case</button>
+            <button className='btn btn4' onClick={handleAlternateClick}>Alternate Case</button>
+            <button className='btn btn5' onClick={handleExtraSpaceClick}>Remove Extra Spaces</button>
+            <button className='btn btn6' onClick={handleCopy}>Copy</button>
+            <button className='btn btn7' onClick={handleClearClick}>Clear</button>
 
             </div>
 
