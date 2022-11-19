@@ -8,12 +8,31 @@
 .container{
   height: 95vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.heading{
+  font-size: 2rem;
 }
 
 .mainInput{
   width: 70vw;
   height: 3rem;
   padding: 0 15px;
+  margin: 45px;
+}
+
+.btns{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 38px;
+}
+
+button{
+  cursor: pointer;
+  padding: 25px;
 }

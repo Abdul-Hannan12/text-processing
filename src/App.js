@@ -4,7 +4,7 @@ import TextForm from './components/TextForm';
 function App() {
   return (
     <>
-    <TextForm/>
+    <TextForm placeholder="Enter Text Here" />
     </>
   );
 }
