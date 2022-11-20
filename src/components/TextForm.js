@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 export default function TextForm(props){
 
     const [text, setText] = useState('');
-    
+
     const style = {
         'backgroundColor' : props.mode === 'light' ? '#B0B0EE' : '#3d3f58',
         'color': props.mode === 'light' ? 'black' : 'white'
@@ -48,8 +48,7 @@ export default function TextForm(props){
     }
 
     const handleExtraSpaceClick = ()=>{
-        let textArr = text.split(/[ ]+/);
-        let newText = textArr.join(' ');
+        let newText = removeExtraSpaces(text);
         setText(newText);
     }
     
@@ -79,6 +78,7 @@ export default function TextForm(props){
     }
 
     const titleCase = str => `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
+    const removeExtraSpaces = str => str.split(/[ ]+/).join(' ');
 
     return (
 
@@ -102,7 +102,7 @@ export default function TextForm(props){
 
             <u><h1 className='heading my'>Summary</h1></u>
 
-            <p><strong>Words:&nbsp;</strong>{(text.endsWith(" ") || text.length === 0) ? text.split(' ').length - 1 : text.split(' ').length}</p>
+            <p><strong>Words:&nbsp;</strong>{(text.endsWith(" ") || text.length === 0) ? removeExtraSpaces(text).split(' ').length - 1 : removeExtraSpaces(text).split(' ').length}</p>
             <p><strong>Characters:&nbsp;</strong>{text.trim().length}</p>
             <p><strong>Time to read:&nbsp;</strong>{(text.split(' ').length * 0.004 < 1) ? 'less than one ' : Math.floor(text.split(' ').length * 0.004)}{(text.split(' ').length * 0.004 < 2) ? ' minute' : ' minutes'}</p>
 
