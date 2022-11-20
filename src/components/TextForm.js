@@ -60,6 +60,7 @@ export default function TextForm(props){
     const titleCase = str => `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
 
     return (
+
         <div className="container">
 
             <u><h1 className="heading">Modify Your Text Here</h1></u>

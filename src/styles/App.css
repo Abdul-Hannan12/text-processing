@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1.15rem;
 }
 
 .container{
@@ -21,6 +20,8 @@
   height: 3rem;
   padding: 0 15px;
   margin: 45px;
+  border-radius: 10px;
+  font-size: 1.2rem;
 }
 
 .btns{
@@ -34,6 +35,13 @@
 .btn{
   cursor: pointer;
   padding: 15px;
+  background-color: rgb(176, 176, 238);
+  border-radius: 20%;
+  border: 1px solid rgb(17, 17, 66);
+}
+
+.btn:hover{
+  background-color: rgb(168, 168, 240);
 }
 
 .btn1 { grid-area: 1 / 1 / 2 / 2; }
