@@ -1,7 +1,15 @@
 
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 export default function Navbar(props) {
+
+    const homeClick = ()=>{
+        document.title = "Text Modifier - Home"
+    }
+
+    const aboutClick = ()=>{
+        document.title = "Text Modifier - About"
+    }
 
     const anchorStyle = {
         'color': props.mode === 'dark' ? 'white' : 'black'
@@ -14,8 +22,8 @@ export default function Navbar(props) {
 
         <h1 className='logo' >TextModifier</h1>
 
-        <NavLink className='navItem' style={anchorStyle} to="/"> Home </NavLink>
-        <NavLink className='navItem' style={anchorStyle} to="/about"> About </NavLink>
+        <NavLink className='navItem' onClick={homeClick} style={anchorStyle} to="/"> Home </NavLink>
+        <NavLink className='navItem' onClick={aboutClick} style={anchorStyle} to="/about"> About </NavLink>
 
         </div>
 
