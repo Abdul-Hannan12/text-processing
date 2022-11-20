@@ -13,7 +13,6 @@ export default function Navbar(props) {
                 <span className="slider round"></span>
             </label>
         </div>
-
       
     </nav>
   )

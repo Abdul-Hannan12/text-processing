@@ -3,6 +3,11 @@ import React, {useState} from 'react';
 export default function TextForm(props){
 
     const [text, setText] = useState('');
+    
+    const style = {
+        'backgroundColor' : props.mode === 'light' ? '#B0B0EE' : '#3d3f58',
+        'color': props.mode === 'light' ? 'black' : 'white'
+    };
 
     const handleUpClick = ()=>{
         let newText = text.toUpperCase();
@@ -56,6 +61,22 @@ export default function TextForm(props){
     const handleOnChange = (e)=>{
         setText(e.target.value);
     }
+    
+    const handleBtnHover = (e)=>{
+        if (props.mode === 'light'){
+            e.target.style.background = '#A8A8F0';
+        }else{
+            e.target.style.background = '#484A64';
+        }
+    }
+    
+    const handleBtnMouseLeave = (e)=>{
+        if (props.mode === 'light'){
+            e.target.style.background = '#B0B0EE';
+        }else{
+            e.target.style.background = '#3d3f58';
+        }
+    }
 
     const titleCase = str => `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
 
@@ -65,17 +86,17 @@ export default function TextForm(props){
 
             <u><h1 className="heading">Modify Your Text Here</h1></u>
 
-            <input className="mainInput" value={text} onChange={handleOnChange} type="text" placeholder={props.placeholder}/>
+            <input className="mainInput" style={{'color': (props.mode === 'light') ? 'black' : 'white'}} value={text} onChange={handleOnChange} type="text" placeholder={props.placeholder}/>
 
             <div className="btns">
 
-            <button className='btn btn1' onClick={handleUpClick}>Upper Case</button>
-            <button className='btn btn2' onClick={handleLowClick}>Lower Case</button>
-            <button className='btn btn3' onClick={handleTitleClick}>Title Case</button>
-            <button className='btn btn4' onClick={handleAlternateClick}>Alternate Case</button>
-            <button className='btn btn5' onClick={handleExtraSpaceClick}>Remove Extra Spaces</button>
-            <button className='btn btn6' onClick={handleCopy}>Copy</button>
-            <button className='btn btn7' onClick={handleClearClick}>Clear</button>
+            <button className='btn btn1' style={style} onMouseOver={handleBtnHover} onMouseLeave={handleBtnMouseLeave} onClick={handleUpClick}>Upper Case</button>
+            <button className='btn btn2' style={style} onMouseOver={handleBtnHover} onMouseLeave={handleBtnMouseLeave} onClick={handleLowClick}>Lower Case</button>
+            <button className='btn btn3' style={style} onMouseOver={handleBtnHover} onMouseLeave={handleBtnMouseLeave} onClick={handleTitleClick}>Title Case</button>
+            <button className='btn btn4' style={style} onMouseOver={handleBtnHover} onMouseLeave={handleBtnMouseLeave} onClick={handleAlternateClick}>Alternate Case</button>
+            <button className='btn btn5' style={style} onMouseOver={handleBtnHover} onMouseLeave={handleBtnMouseLeave} onClick={handleExtraSpaceClick}>Remove Extra Spaces</button>
+            <button className='btn btn6' style={style} onMouseOver={handleBtnHover} onMouseLeave={handleBtnMouseLeave} onClick={handleCopy}>Copy</button>
+            <button className='btn btn7' style={style} onMouseOver={handleBtnHover} onMouseLeave={handleBtnMouseLeave} onClick={handleClearClick}>Clear</button>
 
             </div>
 

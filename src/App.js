@@ -23,7 +23,7 @@ function App() {
   return (
     <>
     <Navbar mode={mode} toggle={toggleMode} />
-    <TextForm placeholder="Enter Text Here" />
+    <TextForm placeholder="Enter Text Here" mode={mode} />
     </>
   );
 }
